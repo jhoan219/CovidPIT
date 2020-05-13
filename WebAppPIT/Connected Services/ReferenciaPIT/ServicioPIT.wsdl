@@ -1,0 +1,425 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="ServicioPIT" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xs:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:import namespace="http://schemas.datacontract.org/2004/07/WcfServicio" />
+      <xs:element name="Ciudadanos">
+        <xs:complexType>
+          <xs:sequence />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="CiudadanosResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/WcfServicio" minOccurs="0" name="CiudadanosResult" nillable="true" type="q1:ArrayOfCiudadano" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="AgregarCiudadano">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/WcfServicio" minOccurs="0" name="reg" nillable="true" type="q2:Ciudadano" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="AgregarCiudadanoResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="AgregarCiudadanoResult" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ActualizarCiudadano">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/WcfServicio" minOccurs="0" name="reg" nillable="true" type="q3:Ciudadano" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ActualizarCiudadanoResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="ActualizarCiudadanoResult" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="DetalleCiudadano">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="id" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="DetalleCiudadanoResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/WcfServicio" minOccurs="0" name="DetalleCiudadanoResult" nillable="true" type="q4:Ciudadano" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="EliminarCiudadano">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="id" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="EliminarCiudadanoResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="EliminarCiudadanoResult" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="Users">
+        <xs:complexType>
+          <xs:sequence />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="UsersResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/WcfServicio" minOccurs="0" name="UsersResult" nillable="true" type="q5:ArrayOfUsers" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="AgregarUsers">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/WcfServicio" minOccurs="0" name="reg" nillable="true" type="q6:Ciudadano" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="AgregarUsersResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="AgregarUsersResult" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ActualizarUsers">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/WcfServicio" minOccurs="0" name="reg" nillable="true" type="q7:Ciudadano" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ActualizarUsersResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="ActualizarUsersResult" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="DetalleUsers">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="id" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="DetalleUsersResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/WcfServicio" minOccurs="0" name="DetalleUsersResult" nillable="true" type="q8:Ciudadano" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="EliminarUsers">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="id" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="EliminarUsersResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="EliminarUsersResult" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:schema>
+    <xs:schema xmlns:tns="http://schemas.microsoft.com/2003/10/Serialization/" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="anyType" nillable="true" type="xs:anyType" />
+      <xs:element name="anyURI" nillable="true" type="xs:anyURI" />
+      <xs:element name="base64Binary" nillable="true" type="xs:base64Binary" />
+      <xs:element name="boolean" nillable="true" type="xs:boolean" />
+      <xs:element name="byte" nillable="true" type="xs:byte" />
+      <xs:element name="dateTime" nillable="true" type="xs:dateTime" />
+      <xs:element name="decimal" nillable="true" type="xs:decimal" />
+      <xs:element name="double" nillable="true" type="xs:double" />
+      <xs:element name="float" nillable="true" type="xs:float" />
+      <xs:element name="int" nillable="true" type="xs:int" />
+      <xs:element name="long" nillable="true" type="xs:long" />
+      <xs:element name="QName" nillable="true" type="xs:QName" />
+      <xs:element name="short" nillable="true" type="xs:short" />
+      <xs:element name="string" nillable="true" type="xs:string" />
+      <xs:element name="unsignedByte" nillable="true" type="xs:unsignedByte" />
+      <xs:element name="unsignedInt" nillable="true" type="xs:unsignedInt" />
+      <xs:element name="unsignedLong" nillable="true" type="xs:unsignedLong" />
+      <xs:element name="unsignedShort" nillable="true" type="xs:unsignedShort" />
+      <xs:element name="char" nillable="true" type="tns:char" />
+      <xs:simpleType name="char">
+        <xs:restriction base="xs:int" />
+      </xs:simpleType>
+      <xs:element name="duration" nillable="true" type="tns:duration" />
+      <xs:simpleType name="duration">
+        <xs:restriction base="xs:duration">
+          <xs:pattern value="\-?P(\d*D)?(T(\d*H)?(\d*M)?(\d*(\.\d*)?S)?)?" />
+          <xs:minInclusive value="-P10675199DT2H48M5.4775808S" />
+          <xs:maxInclusive value="P10675199DT2H48M5.4775807S" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:element name="guid" nillable="true" type="tns:guid" />
+      <xs:simpleType name="guid">
+        <xs:restriction base="xs:string">
+          <xs:pattern value="[\da-fA-F]{8}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{12}" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:attribute name="FactoryType" type="xs:QName" />
+      <xs:attribute name="Id" type="xs:ID" />
+      <xs:attribute name="Ref" type="xs:IDREF" />
+    </xs:schema>
+    <xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/WcfServicio" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/WcfServicio" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:complexType name="ArrayOfCiudadano">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="Ciudadano" nillable="true" type="tns:Ciudadano" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ArrayOfCiudadano" nillable="true" type="tns:ArrayOfCiudadano" />
+      <xs:complexType name="Ciudadano">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="idciudadano" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="iddepartamento" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="iddistrito" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="idestado" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="idprovincia" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="nacionalidad" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="nombres" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="numdocumento" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="tipodocumento" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="Ciudadano" nillable="true" type="tns:Ciudadano" />
+      <xs:complexType name="ArrayOfUsers">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="Users" nillable="true" type="tns:Users" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ArrayOfUsers" nillable="true" type="tns:ArrayOfUsers" />
+      <xs:complexType name="Users">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="apellidos" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="contraseña" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="direccion" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="dni" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="id" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="nombre" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="usuario" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="Users" nillable="true" type="tns:Users" />
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="IServicioPIT_Ciudadanos_InputMessage">
+    <wsdl:part name="parameters" element="tns:Ciudadanos" />
+  </wsdl:message>
+  <wsdl:message name="IServicioPIT_Ciudadanos_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CiudadanosResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioPIT_AgregarCiudadano_InputMessage">
+    <wsdl:part name="parameters" element="tns:AgregarCiudadano" />
+  </wsdl:message>
+  <wsdl:message name="IServicioPIT_AgregarCiudadano_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AgregarCiudadanoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioPIT_ActualizarCiudadano_InputMessage">
+    <wsdl:part name="parameters" element="tns:ActualizarCiudadano" />
+  </wsdl:message>
+  <wsdl:message name="IServicioPIT_ActualizarCiudadano_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ActualizarCiudadanoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioPIT_DetalleCiudadano_InputMessage">
+    <wsdl:part name="parameters" element="tns:DetalleCiudadano" />
+  </wsdl:message>
+  <wsdl:message name="IServicioPIT_DetalleCiudadano_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DetalleCiudadanoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioPIT_EliminarCiudadano_InputMessage">
+    <wsdl:part name="parameters" element="tns:EliminarCiudadano" />
+  </wsdl:message>
+  <wsdl:message name="IServicioPIT_EliminarCiudadano_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EliminarCiudadanoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioPIT_Users_InputMessage">
+    <wsdl:part name="parameters" element="tns:Users" />
+  </wsdl:message>
+  <wsdl:message name="IServicioPIT_Users_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UsersResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioPIT_AgregarUsers_InputMessage">
+    <wsdl:part name="parameters" element="tns:AgregarUsers" />
+  </wsdl:message>
+  <wsdl:message name="IServicioPIT_AgregarUsers_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AgregarUsersResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioPIT_ActualizarUsers_InputMessage">
+    <wsdl:part name="parameters" element="tns:ActualizarUsers" />
+  </wsdl:message>
+  <wsdl:message name="IServicioPIT_ActualizarUsers_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ActualizarUsersResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioPIT_DetalleUsers_InputMessage">
+    <wsdl:part name="parameters" element="tns:DetalleUsers" />
+  </wsdl:message>
+  <wsdl:message name="IServicioPIT_DetalleUsers_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DetalleUsersResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioPIT_EliminarUsers_InputMessage">
+    <wsdl:part name="parameters" element="tns:EliminarUsers" />
+  </wsdl:message>
+  <wsdl:message name="IServicioPIT_EliminarUsers_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EliminarUsersResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IServicioPIT">
+    <wsdl:operation name="Ciudadanos">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioPIT/Ciudadanos" message="tns:IServicioPIT_Ciudadanos_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioPIT/CiudadanosResponse" message="tns:IServicioPIT_Ciudadanos_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AgregarCiudadano">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioPIT/AgregarCiudadano" message="tns:IServicioPIT_AgregarCiudadano_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioPIT/AgregarCiudadanoResponse" message="tns:IServicioPIT_AgregarCiudadano_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarCiudadano">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioPIT/ActualizarCiudadano" message="tns:IServicioPIT_ActualizarCiudadano_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioPIT/ActualizarCiudadanoResponse" message="tns:IServicioPIT_ActualizarCiudadano_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DetalleCiudadano">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioPIT/DetalleCiudadano" message="tns:IServicioPIT_DetalleCiudadano_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioPIT/DetalleCiudadanoResponse" message="tns:IServicioPIT_DetalleCiudadano_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EliminarCiudadano">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioPIT/EliminarCiudadano" message="tns:IServicioPIT_EliminarCiudadano_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioPIT/EliminarCiudadanoResponse" message="tns:IServicioPIT_EliminarCiudadano_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Users">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioPIT/Users" message="tns:IServicioPIT_Users_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioPIT/UsersResponse" message="tns:IServicioPIT_Users_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AgregarUsers">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioPIT/AgregarUsers" message="tns:IServicioPIT_AgregarUsers_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioPIT/AgregarUsersResponse" message="tns:IServicioPIT_AgregarUsers_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarUsers">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioPIT/ActualizarUsers" message="tns:IServicioPIT_ActualizarUsers_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioPIT/ActualizarUsersResponse" message="tns:IServicioPIT_ActualizarUsers_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DetalleUsers">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioPIT/DetalleUsers" message="tns:IServicioPIT_DetalleUsers_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioPIT/DetalleUsersResponse" message="tns:IServicioPIT_DetalleUsers_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EliminarUsers">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioPIT/EliminarUsers" message="tns:IServicioPIT_EliminarUsers_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioPIT/EliminarUsersResponse" message="tns:IServicioPIT_EliminarUsers_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IServicioPIT" type="tns:IServicioPIT">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Ciudadanos">
+      <soap:operation soapAction="http://tempuri.org/IServicioPIT/Ciudadanos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AgregarCiudadano">
+      <soap:operation soapAction="http://tempuri.org/IServicioPIT/AgregarCiudadano" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarCiudadano">
+      <soap:operation soapAction="http://tempuri.org/IServicioPIT/ActualizarCiudadano" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DetalleCiudadano">
+      <soap:operation soapAction="http://tempuri.org/IServicioPIT/DetalleCiudadano" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EliminarCiudadano">
+      <soap:operation soapAction="http://tempuri.org/IServicioPIT/EliminarCiudadano" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Users">
+      <soap:operation soapAction="http://tempuri.org/IServicioPIT/Users" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AgregarUsers">
+      <soap:operation soapAction="http://tempuri.org/IServicioPIT/AgregarUsers" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarUsers">
+      <soap:operation soapAction="http://tempuri.org/IServicioPIT/ActualizarUsers" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DetalleUsers">
+      <soap:operation soapAction="http://tempuri.org/IServicioPIT/DetalleUsers" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EliminarUsers">
+      <soap:operation soapAction="http://tempuri.org/IServicioPIT/EliminarUsers" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ServicioPIT">
+    <wsdl:port name="BasicHttpBinding_IServicioPIT" binding="tns:BasicHttpBinding_IServicioPIT">
+      <soap:address location="http://localhost:50267/ServicioPIT.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

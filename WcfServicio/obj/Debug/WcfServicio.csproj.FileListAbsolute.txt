@@ -1,0 +1,5 @@
+C:\Users\Usuario\Desktop\rrrrrrrrrrrrrrrr\WebAppPIT\WcfServicio\bin\WcfServicio.dll.config
+C:\Users\Usuario\Desktop\rrrrrrrrrrrrrrrr\WebAppPIT\WcfServicio\bin\WcfServicio.dll
+C:\Users\Usuario\Desktop\rrrrrrrrrrrrrrrr\WebAppPIT\WcfServicio\bin\WcfServicio.pdb
+C:\Users\Usuario\Desktop\rrrrrrrrrrrrrrrr\WebAppPIT\WcfServicio\obj\Debug\WcfServicio.dll
+C:\Users\Usuario\Desktop\rrrrrrrrrrrrrrrr\WebAppPIT\WcfServicio\obj\Debug\WcfServicio.pdb
